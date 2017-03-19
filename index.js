@@ -1,44 +1,44 @@
 module.exports = function(txt) {
-  	var base = "++++++++++["
-	  var end = "";
-	  var print = "";
+	var base = "++++++++++["
+	var end = "";
+	var print = "";
 		
-	  var chars = txt.split('');
-	  var cells = [];
-	  var codes = [];
+	var chars = txt.split('');
+	var cells = [];
+	var codes = [];
 		
-	  for(var i = 0; i <= chars.length-1; i++) {
-		  cells.push(Math.round(chars[i].charCodeAt(0) /10));
-		  codes.push(chars[i].charCodeAt(0));
-	  }
+	for(var i = 0; i <= chars.length-1; i++) {
+		cells.push(Math.round(chars[i].charCodeAt(0) /10));
+		codes.push(chars[i].charCodeAt(0));
+	}
 		
-	  for(var i = 0; i <= cells.length-1; i++) {
-	  	base = base + ">"
-		  end = end + "<";
+	for(var i = 0; i <= cells.length-1; i++) {
+		base = base + ">"
+		end = end + "<";
 			
-		  for(var x = 0; x <= cells[i]-1; x++) {
-		  	base = base + "+";
-		  }
+		for(var x = 0; x <= cells[i]-1; x++) {
+			base = base + "+";
+		}
 			
-		  print = print + ">"
+		print = print + ">"
 			
-		  var _ = codes[i] - cells[i] * 10
+		var _ = codes[i] - cells[i] * 10
 			
-		  if(_ < 0) _ = -_
+		if(_ < 0) _ = -_
 			
-		  for(var z = 0; z <= _-1; z++) {
-			  var val = codes[i] - cells[i] * 10
+		for(var z = 0; z <= _-1; z++) {
+			var val = codes[i] - cells[i] * 10
 				
-			  if(val <= 0) {
-				  print = print + "-"
-			  } else print = print + "+"
-		  }
-		  print = print + "."
-	  }
+			if(val <= 0) {
+				print = print + "-"
+			} else print = print + "+"
+		}
+		print = print + "."
+	}
 		
-	  end = end + "-]"
+	end = end + "-]"
 		
-	  var code = base + end + print;
+	var code = base + end + print;
 	
-	  return code;
+	return code;
 }
