@@ -1,9 +1,9 @@
 ### Convert text to brainfuck, and back.
 
 ```javascript
-var index = require('ttbf');
+var index = require('./index.js');
 
-var text = index.convert('Hello')
+var text = index('Hello')
 
 console.log(text);
 ```
