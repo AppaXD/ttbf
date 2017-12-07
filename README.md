@@ -1,7 +1,7 @@
 ```javascript
-var index = require('./index.js');
+var ttbf = require('./index.js');
 
-var text = index('Hello')
+var text = ttbf('Hello')
 
 console.log(text);
 ```
